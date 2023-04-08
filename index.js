@@ -15,11 +15,25 @@ const app = (
     </div>
 );
 
-ReactDOM.render(
-<div>
-<h1>Embedded Expression</h1>
-<h2>See below</h2>
-{embeddedExpression}
-</div>,
-  document.getElementById("root")
-);
+// functional componenets 
+const App = (props) => {
+  const name = props.name;
+  return (
+    <div>
+    <h1>Hello, {name}</h1>
+    <p>Welcome to my first React component</p>
+    </div>
+  );
+  }
+  const element = <App/>;
+
+
+  ReactDOM.render(
+    <App name="React Trump" />,
+    document.getElementById("root")
+    );
+
+
+
+
+
