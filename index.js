@@ -27,9 +27,54 @@ const App = (props) => {
   }
   const element = <App/>;
 
+  const App1 = (props) => {
+return (
+<div>
+<h3>Query: {props.search}</h3>
+<p>Category: {props.category}</p>
+<p>Page: {props.page}</p>
+
+</div>
+
+);
+  }
+
+  const Calender = (props) => {
+    return (
+      <div>
+        <h3>Todays date is</h3>
+        <p><strong>{props.date}</strong></p>
+      </div>
+    );
+  }
+
+  // class componenets
+
+class Counter extends React.Component {
+constructor(props) {
+  super(props);
+}
+
+render() {
+  const src = this.props.src;
+  const alt = this.props.alt;
+  const description = this.props.description;
+  return (
+   <div>
+    <h2>Image Container</h2>
+    <img src={this.props.src} alt={this.props.alt} />
+    <p>{this.props.description}</p>
+   </div> 
+  );
+}
+}
 
   ReactDOM.render(
-    <App name="React Trump" />,
+    <Counter
+    src="https://mimo.org"
+    alt="The best learning site"
+    description="Welcome class of 2023"
+    />,
     document.getElementById("root")
     );
 
