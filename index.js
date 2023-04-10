@@ -100,10 +100,56 @@ render() {
   )
 }
 }
+// react state 2
 
+class App3 extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      loaded: false,
+    }
+  }
+  componentDidMount() {
+    this.setState({
+      loaded: false
+    }) 
+  }
 
+  render() {
+    if (this.state.loaded) {
+      return <p>Load complete</p>
+    }
+    return <p>Load not complete...</p>
+  }
+}
+
+class App4 extends React.Component {
+  constructor() {
+    super();
+    this.state = {power:100}
+  }
+
+clickHandle = () => {
+  if (this.state.power < 10) return;
+  this.setState({
+    power: this.state.power - 10
+  }); 
+}
+
+render() {
+  return (
+    <div>
+      <img src="https://mimo.app/i/car.png" alt="Car" />
+      <h1>My Car</h1>
+      <p>Its currently at {this.state.power}%</p>
+    <button onClick={this.clickHandle}>Drive Further
+    </button>
+    </div>
+  );
+}
+}
   ReactDOM.render(
-    <App2
+    <App4
     />,
     document.getElementById("root")
     );
