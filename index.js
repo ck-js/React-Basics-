@@ -77,12 +77,23 @@ super(props);
 this.state = {count:0};
 }
 
-componentDidMount() {}
+componentDidMount() {
+  this.setState (
+    {count:1}
+  );
+}
 
+updateCount = () => {
+this.setState({
+  count: this.state.count+1
+});
+}
 render() {
   return (
 <div>
   <h1>Hello, React State</h1>
+<button onClick={this.updateCount}>
+  Click Me</button>
 <p>Our count is currently {this.state.count}</p>
 </div>
 
