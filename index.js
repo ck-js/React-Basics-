@@ -69,11 +69,30 @@ render() {
 }
 }
 
+// setting react state
+
+class App2 extends React.Component {
+constructor(props) {
+super(props);
+this.state = {count:0};
+}
+
+componentDidMount() {}
+
+render() {
+  return (
+<div>
+  <h1>Hello, React State</h1>
+<p>Our count is currently {this.state.count}</p>
+</div>
+
+  )
+}
+}
+
+
   ReactDOM.render(
-    <Counter
-    src="https://mimo.org"
-    alt="The best learning site"
-    description="Welcome class of 2023"
+    <App2
     />,
     document.getElementById("root")
     );
