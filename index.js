@@ -148,8 +148,36 @@ render() {
   );
 }
 }
-  ReactDOM.render(
-    <App4
+  
+class App5 extends React.Component {
+  constructor() {
+    super();
+    this.state = {game: "Grand Theft Auto 5"};
+  }
+
+  setGrandTheftAuto4 = () => {
+    this.setState({game: "Grand Theft Auto 4"});
+  }
+setWWE = () => {
+  this.setState({game: "WWE"});
+  
+}
+
+render() {
+return (
+  <div>
+    <h1>My favorite game was... {this.state.game}</h1>
+    <p>and currently my favorite is...</p>
+    <button onClick={this.setGrandTheftAuto4}>Grand Theft Auto 4</button>
+    <button onClick={this.setWWE}>WWE</button>
+  </div>
+)
+
+}
+}
+
+ReactDOM.render(
+    <App5
     />,
     document.getElementById("root")
     );
