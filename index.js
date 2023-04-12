@@ -236,14 +236,86 @@ this.state.text}</p>
 } 
 }
 
+class TextInput extends React.Component {
+  constructor() {
+    super();
+    this.state={value: ""}
+  }
+
+updateText = (e) => {
+this.setState({
+  value: e.target.value
+});  
+}
+
+validateText = () => {}
+
+render() {
+  return (
+   <input
+   type="text"
+   value={this.state.value}
+    onChange={this.updateText}
+  />
+  );
+}
+}
+
+class App8 extends React.Component {
+  constructor() {
+  super();
+  this.state={name: ""}
+}
+
+handleInput = (event) => {
+  this.setState({
+    name:event.target.value
+  });
+}
+
+render() {
+  return (
+    <input
+    name="name"
+    value={this.state.name}
+    onChange={this.handleInput}
+    />
+  );
+}
+}
+
+class App9 extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: ""
+    }
+  }
+
+  handleEmailInput = (e) => {
+   this.setState({
+    email:e.target.value
+   }); 
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Another Event Handler example in React</h1>
+        <input 
+        type="email"
+        placeholder="Email"
+        value={this.state.email}
+        onChange={this.handleEmailInput}
+      />
+        <h5> You input email: <u>{this.state.email}</u></h5>
+        </div>
+    )
+  }
+}
+
 ReactDOM.render(
-    <App7
-    name="Satoshi Nakamoto"
-    />,
+  <App9
+  />,
     document.getElementById("root")
     );
-
-
-
-
-
