@@ -175,9 +175,70 @@ return (
 
 }
 }
+class App6 extends React.Component {
+  constructor() {
+    super();
+    this.state = {count: 1};
+  }
+
+  componentDidMount() {
+    this.setState({
+      count: 1
+    });
+  }
+updateCount = () => {
+  const newCount = this.state.count + 1;
+  this.setState({
+    count: newCount
+  });
+}
+
+  render() {
+    return (
+      <div>
+        <h1>Loader</h1>
+        <p>Ive been loaded {this.state.count} times</p>
+      <button onClick={this.updateCount}>Click Me</button>
+      </div>
+    )
+  }
+}
+
+// event handling in react 
+
+class App7 extends React.Component {
+  constructor(props) {
+super(props);
+this.state={text: ""};
+  }
+
+  handleInput = (event) => {
+const val = event.target.value;
+this.setState({
+  text: val
+})
+  }
+
+render() {
+  return (
+    <div>
+      <h1>Hello, {this.props.name}</h1>
+      <input
+      type="text"
+      placeholder="Type Here"
+      value={this.state.text}
+      onChange={this.handleInput}
+/>
+<p><strong>You entered</strong> {
+this.state.text}</p>
+      </div>
+  )
+} 
+}
 
 ReactDOM.render(
-    <App5
+    <App7
+    name="Satoshi Nakamoto"
     />,
     document.getElementById("root")
     );
