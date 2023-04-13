@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {CustomButtons} from "./buttons"; 
 
 const header =
   <h1>Arigato React</h1>;
@@ -314,8 +315,46 @@ class App9 extends React.Component {
   }
 }
 
+// reusing multiple components 
+
+class App10 extends React.Component {
+constructor() {
+  super();
+  this.state={count:0}
+}
+countdown = () => {
+  this.setState({
+    count:this.state.count-1
+  });
+}
+
+countUp = () => {
+  this.setState({
+    count:this.state.count+1
+  });
+}
+
+render() {
+  return (
+    <div>
+      <h1>Welcome to my multiple components React App</h1>
+      <p>Ive been clicked {this.state.count} times</p>
+      <CustomButtons
+text="Count down"
+handleClick={this.countdown}
+/>      
+<CustomButtons
+text="Count Up"
+handleClick={this.countUp}
+/>
+    </div>
+  )
+}
+}
+
+
 ReactDOM.render(
-  <App9
+  <App10
   />,
     document.getElementById("root")
     );
