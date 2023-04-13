@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {CustomButtons} from "./buttons"; 
+import {MyImage} from "./buttons"
+
 
 const header =
   <h1>Arigato React</h1>;
@@ -352,9 +354,24 @@ handleClick={this.countUp}
 }
 }
 
+const App11 = () => {
+  return (
+    <div>
+      <h1>Welcome to my multiple component React App</h1>
+      <MyImage
+      name="backpack"
+      />
+      <MyImage
+      name="camera"
+      />
+    </div>
+  )
+}
+
+
 
 ReactDOM.render(
-  <App10
+  <App11
   />,
     document.getElementById("root")
     );
