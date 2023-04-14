@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {CustomButtons} from "./buttons"; 
-import {MyImage} from "./buttons"
+import {
+  CustomButtons,
+MyImage
+} from "./buttons"; 
 
 
 const header =
@@ -368,10 +370,50 @@ const App11 = () => {
   )
 }
 
+// css in react components 
+
+const App12 = () => {
+  return (
+    <div>
+      <h1 style={
+        {
+          textDecoration:"underline"
+        }
+      }>
+        First inline styled css component in React
+      </h1>
+    <p>This is normal text</p>
+    </div>
+  )
+}
+
+const App13 = () => {
+const styles = {
+header:{
+  textDecoration:"underline"
+
+},
+paragraph:{
+  color:"blue",
+  fontWeight:"bold"
+}
+}
+
+return (
+  <div>
+    <h1 style={styles.header}>
+      First styled component using objects
+    </h1>
+    <p style={styles.paragraph}>
+      This should be blue bold text
+    </p>
+  </div>
+)
+}
 
 
 ReactDOM.render(
-  <App11
+  <App13
   />,
     document.getElementById("root")
     );
