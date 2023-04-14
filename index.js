@@ -5,6 +5,8 @@ import {
 MyImage
 } from "./buttons"; 
 
+import "./App.css"
+
 
 const header =
   <h1>Arigato React</h1>;
@@ -411,9 +413,19 @@ return (
 )
 }
 
+const App14 = () => {
+  return (
+    <div className="container">
+      <h1 className="div h1">
+        Styled react component using css file
+      </h1>
+      <p className="div p">This text should be bold and green</p>
+    </div>
+  )
+}
 
 ReactDOM.render(
-  <App13
+  <App14
   />,
     document.getElementById("root")
     );
