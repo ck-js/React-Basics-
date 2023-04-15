@@ -482,7 +482,7 @@ resetInput = () => {
 
 render() {
   return (
-    <div>
+    <div className="container">
       <h1>Login Form</h1>
       <FormInput
 val={this.state.text}
@@ -496,7 +496,7 @@ placeholder="Your email"
 />
 <FormButton
 val="Reset"
-handler={this.resetInput}
+handler={this.resetnput}
 />
     </div>
   )
