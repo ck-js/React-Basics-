@@ -6,6 +6,12 @@ MyImage
 } from "./buttons"; 
 
 import "./App.css"
+import {
+  PicWithCaption,
+  FormInput,
+  FormButton
+} from "./webElements"
+
 
 
 const header =
@@ -424,8 +430,81 @@ const App14 = () => {
   )
 }
 
+// using multiple components
+
+const App15 = () => {
+  return (
+    <div>
+      <PicWithCaption
+      img="https://mimo.app/i/forrest-walk.png"
+      text="Walking through the woods"
+      />
+      <hr />
+<PicWithCaption
+img="https://mimo.app/i/sea-of-clouds.png"
+text="Sea of clouds"
+/>
+<hr />
+<PicWithCaption
+img="https://mimo.app/i/lakeside.png"
+text="Rock at the Lakeside"
+/>
+
+    </div>
+  )
+}
+
+class App16 extends React.Component {
+  constructor() {
+    super();
+    this.state={
+      text: "",
+      email: ""
+    }
+  } 
+
+  handleText = (event) => {
+    this.setState({
+      text: event.target.value
+    })
+  }
+  handleEmail = (event) => {
+    this.setState({
+      email: event.target.value
+    })
+  }
+resetInput = () => {
+  this.setState({
+    text: "",
+    email: ""
+  })
+}
+
+render() {
+  return (
+    <div>
+      <h1>Login Form</h1>
+      <FormInput
+val={this.state.text}
+handler={this.handleText}
+placeholder="Your Name"
+/>
+<FormInput
+val={this.state.email}
+handler={this.handleEmail}
+placeholder="Your email"
+/>
+<FormButton
+val="Reset"
+handler={this.resetInput}
+/>
+    </div>
+  )
+}
+}
+
 ReactDOM.render(
-  <App14
+  <App16
   />,
     document.getElementById("root")
     );
