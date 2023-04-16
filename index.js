@@ -9,7 +9,8 @@ import "./App.css"
 import {
   PicWithCaption,
   FormInput,
-  FormButton
+  FormButton,
+  
 } from "./webElements"
 
 
@@ -482,7 +483,7 @@ resetInput = () => {
 
 render() {
   return (
-    <div className="container">
+    <div className="container">e
       <h1>Login Form</h1>
       <FormInput
 val={this.state.text}
@@ -503,8 +504,43 @@ handler={this.resetnput}
 }
 }
 
+
+class MyVideoPlayer extends
+React.Component {
+    constructor(props) {
+        super(props);
+}
+render() {
+const title = this.props.title;
+const author = this.props.author;
+const thumb = this.props.thumb;
+const publish = this.props.publish;
+const views = this.props.views;
+    
+ return (
+    <div>
+        <h1>{title}</h1>
+        <img src={thumb} alt={title} />
+        <img src="https://mimo.app/i/player-button-play.png" />
+        <hr></hr>
+        <h4>Video Details</h4>
+        <p>{author}</p>
+        <p>{views}</p>
+        <p>{publish}</p>
+
+    </div>
+ )
+}
+}
+
 ReactDOM.render(
-  <App16
+  <MyVideoPlayer
+  title="Elon Full Interview BBC"
+author="BBC Twit"
+thumb="https://mimo.app/i/chris.png"
+publish="2 days ago"
+views="1M"
+
   />,
     document.getElementById("root")
     );
